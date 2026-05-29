@@ -13,7 +13,7 @@
 <body>
 
     <section class="hero">
-        <div class="badge">OMT Protocol</div>
+        <div class="badge">OMTake</div>
         <img src="icon.png" class="hero-logo" alt="OMTake Logo">
         <h1>Your iPhone<br>
             is a <span>pro camera</span></h1>
@@ -119,11 +119,108 @@
     <footer>
         <div class="footer-links">
             <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:xcapetir@gmail.com">Contact</a>
+            <label for="contact-modal-toggle" class="contact-toggle">Contact</label>
             <a href="https://github.com/xcarpentier/omtake">GitHub</a>
         </div>
         <p>2026 &copy; Xavier Carpentier | OMT protocol by StudioCoast</p>
     </footer>
+    <input type="checkbox" id="contact-modal-toggle" class="modal-toggle" hidden>
+    <div class="modal-overlay">
+        <label for="contact-modal-toggle" class="modal-backdrop"></label>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <div class="modal-header">
+                <h3 id="contact-modal-title">Contact us</h3>
+                <label for="contact-modal-toggle" class="modal-close" aria-label="Fermer">×</label>
+            </div>
+            <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbzhmYxB6dGDy5mroMMYLlS5nCqc2xNAYS4UQIvFM3NSya9CLCbr6gQMoK-vIPKmRSFhCA/exec" method="post">
+                <input type="hidden" name="type" value="contact">
+                <input type="hidden" name="subject" value="Message OMTake">
+                <div id="contact-form-status" class="form-status" aria-live="polite"></div>
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="Email" required>
+                </label>
+                <label>
+                    Message
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                </label>
+                <div class="modal-actions">
+                    <button type="submit" class="button-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-</body>
-</html>
+    <script>
+                    (function () {
+                        const form = document.getElementById('contact-form');
+                        const status = document.getElementById('contact-form-status');
+                        const iframe = document.getElementById('hidden_iframe');
+                        const modalToggle = document.getElementById('contact-modal-toggle');
+
+                        // Delays
+                        const CLOSE_DELAY = 2000; // keep success visible before closing
+                        const TIMEOUT = 8000; // fetch timeout
+
+                        function showStatus(text) {
+                            status.textContent = text;
+                            status.classList.add('visible');
+                        }
+
+                        function clearStatusSoon() {
+                            setTimeout(function () { status.textContent = ''; status.classList.remove('visible'); }, 400);
+                        }
+
+                        form.addEventListener('submit', function (ev) {
+                            ev.preventDefault();
+                            showStatus('Sending...');
+
+                            const controller = new AbortController();
+                            const signal = controller.signal;
+                            const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);
+
+                            // Attempt fetch() first for better control (CORS must be allowed server-side)
+                            fetch(form.action, {
+                                method: 'POST',
+                                body: new FormData(form),
+                                signal: signal,
+                                // mode: 'cors' is default for cross-origin requests
+                            }).then(function (res) {
+                                clearTimeout(timeoutId);
+                                if (res.ok) {
+                                    showStatus('Message sent');
+                                    setTimeout(function () { modalToggle.checked = false; form.reset(); clearStatusSoon(); }, CLOSE_DELAY);
+                                    return;
+                                }
+                                // non-2xx response → fallback to iframe submission
+                                showStatus('Erreur serveur — réessai via fallback');
+                                fallbackSubmit();
+                            }).catch(function (err) {
+                                clearTimeout(timeoutId);
+                                // network error, CORS, or aborted → fallback to iframe
+                                showStatus('Réseau/CORS — utilisation du fallback');
+                                fallbackSubmit();
+                            });
+
+                            function fallbackSubmit() {
+                                // submit the form into the hidden iframe (old behavior)
+                                // attach one-time load handler
+                                const onLoad = function () {
+                                    showStatus('Message sent');
+                                    setTimeout(function () { modalToggle.checked = false; form.reset(); clearStatusSoon(); }, CLOSE_DELAY);
+                                    iframe.removeEventListener('load', onLoad);
+                                };
+                                iframe.addEventListener('load', onLoad);
+                                form.target = 'hidden_iframe';
+                                form.submit();
+                                // restore target to avoid future accidental iframe submits
+                                form.removeAttribute('target');
+                            }
+                        });
+                    })();
+                </script>

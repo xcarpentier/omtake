@@ -104,7 +104,7 @@ body::after {
 
 .badge {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 22px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--yellow);
@@ -134,6 +134,8 @@ body::after {
     display: inline-block;
 
     background: var(--gradient);
+
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -263,18 +265,16 @@ body::after {
 .feature {
     background: var(--surface);
     padding: 40px 32px;
-    transition: background 0.3s;
+    transition:
+        transform 0.4s ease,
+        background 0.2s ease,
+        border-color 0.1s ease;
 }
 
 .feature:hover {
     transform: translateY(-6px) scale(1.03);
     background: var(--surface-2);
     border-color: rgba(255,255,255,0.18);
-    
-    transition:
-        transform 0.4s ease,
-        background 0.2s ease,
-        boder-color 0.1s ease;
 }
 
 .feature-icon {
@@ -506,13 +506,168 @@ footer p {
     color: var(--gray-dim);
 }
 
+.footer-links label,
 footer a {
     color: var(--gray);
     text-decoration: none;
 }
 
-footer a:hover { color: var(--white); }
+footer a:hover,
+.footer-links label:hover {
+    color: var(--white);
+}
 
+.modal-toggle {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(8, 18, 59, 0.88);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1000;
+}
+
+.modal-toggle:checked + .modal-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+
+.modal {
+    position: relative;
+    width: min(100%, 540px);
+    background: rgba(8, 18, 59, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: clamp(20px, 3vw, 26px);
+}
+
+.modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 15px;
+}
+
+.form-status {
+    margin-bottom: 18px;
+    min-height: 24px;
+    font-size: 14px;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.form-status.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.button-primary {
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    padding: 14px 24px;
+    margin-bottom: 0;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background: var(--gradient);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 40px rgba(255, 107, 0, 0.22);
+}
+
+/* Removed unused .button-secondary styles after Cancel button removal */
+
+@media (max-width: 600px) {
+    .modal {
+        padding: 24px;
+    }
+    .modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
 .footer-links {
     display: flex;
     gap: 24px;
