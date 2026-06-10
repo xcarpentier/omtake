@@ -405,6 +405,7 @@ html, body {
 }
 
 .protocol-badges {
+    text-decoration: none!important;
     display: flex;
     gap: 12px;
     justify-content: center;
