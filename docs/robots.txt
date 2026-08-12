@@ -1,0 +1,23 @@
+# omtake.app — all crawlers welcome, social preview crawlers included
+User-agent: *
+Allow: /
+
+# Explicit allow for link-preview crawlers (they do not execute JavaScript,
+# so the Open Graph tags live directly in the served HTML).
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+User-agent: Discordbot
+Allow: /
