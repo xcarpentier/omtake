@@ -21,3 +21,5 @@ Allow: /
 
 User-agent: Discordbot
 Allow: /
+
+Sitemap: https://omtake.app/sitemap.xml

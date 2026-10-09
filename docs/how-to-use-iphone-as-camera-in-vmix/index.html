@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use iPhone as a Camera in vMix (Wireless, OMT) — OMTake</title>
+    <meta name="description" content="Step-by-step guide to use your iPhone as a wireless camera in vMix 29+ over OMT (Open Media Transport). Setup in 2 minutes, NDI vs OMT comparison, troubleshooting and FAQ.">
+    <link rel="canonical" href="https://omtake.app/how-to-use-iphone-as-camera-in-vmix/">
+    <link id="favicon" rel="icon" href="../icon_dark.png" type="image/png">
+
+    <!-- Open Graph — LinkedIn, Facebook, WhatsApp, Slack. These crawlers do not
+         execute JavaScript, so the tags must stay in the served HTML. -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="OMTake">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://omtake.app/how-to-use-iphone-as-camera-in-vmix/">
+    <meta property="og:title" content="How to use iPhone as a camera in vMix">
+    <meta property="og:description" content="Turn your iPhone into a wireless vMix camera over OMT in 2 minutes. Setup steps, NDI vs OMT comparison, troubleshooting and FAQ.">
+    <meta property="og:image" content="https://omtake.app/images/og-vmix-guide.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:image:alt" content="“How to use iPhone as a camera in vMix” beside an iPhone running OMTake and the vMix Input Select window listing it as an OMT source.">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to use iPhone as a camera in vMix">
+    <meta name="twitter:description" content="Turn your iPhone into a wireless vMix camera over OMT in 2 minutes. Setup steps, NDI vs OMT comparison, troubleshooting and FAQ.">
+    <meta name="twitter:image" content="https://omtake.app/images/og-vmix-guide.png">
+    <meta name="twitter:image:alt" content="“How to use iPhone as a camera in vMix” beside an iPhone running OMTake and the vMix Input Select window listing it as an OMT source.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "HowTo",
+                "name": "How to use iPhone as a camera in vMix",
+                "description": "Use an iPhone as a wireless camera input in vMix 29 or later with the OMTake app and the OMT (Open Media Transport) protocol.",
+                "totalTime": "PT2M",
+                "supply": [
+                    { "@type": "HowToSupply", "name": "iPhone running iOS 16.6 or later" },
+                    { "@type": "HowToSupply", "name": "Windows PC running vMix 29 or later" },
+                    { "@type": "HowToSupply", "name": "A local network shared by both devices" }
+                ],
+                "tool": [
+                    { "@type": "HowToTool", "name": "OMTake (free on the App Store)" }
+                ],
+                "step": [
+                    { "@type": "HowToStep", "position": 1, "name": "Connect both devices to the same network", "text": "Put the iPhone and the vMix computer on the same local network. Use 5 GHz Wi-Fi for the iPhone and, ideally, a wired Gigabit connection for the computer." },
+                    { "@type": "HowToStep", "position": 2, "name": "Install OMTake and allow permissions", "text": "Install OMTake from the App Store, open it and allow Camera, Microphone and Local Network access. Local Network access is required for vMix to see the iPhone." },
+                    { "@type": "HowToStep", "position": 3, "name": "Name your camera", "text": "Tap the source name at the top left (OMTake by default) and give each iPhone a unique name, such as Cam 2 Wide." },
+                    { "@type": "HowToStep", "position": 4, "name": "Choose resolution, frame rate and quality", "text": "Tap the HD · 30 · MQ indicator to pick HD or UHD, the frame rate matching your vMix project (25, 30, 50 or 60 fps), and the OMT quality (Low, Medium or High)." },
+                    { "@type": "HowToStep", "position": 5, "name": "Start streaming", "text": "Tap the red button. The status bar shows Live with the current frame rate, latency and number of connected receivers." },
+                    { "@type": "HowToStep", "position": 6, "name": "Add the iPhone as an input in vMix", "text": "In vMix, click Add Input, then NDI / OMT / Desktop Capture. The iPhone appears automatically as an OMT source under the iPhone's name. Select it and click OK." },
+                    { "@type": "HowToStep", "position": 7, "name": "Check tally", "text": "Put the input in Preview: the iPhone shows a green border. Cut it to Program: the border turns red and the rear torch glows softly so the talent knows they are on air." }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Can I use my iPhone as a camera in vMix for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OMTake is free on the App Store with a small watermark, and OMT support is built into vMix 29 or later, so no extra driver or NDI tools are needed. A one-time €9.99 purchase removes the watermark." } },
+                    { "@type": "Question", "name": "Do I need NDI to use my iPhone in vMix?", "acceptedAnswer": { "@type": "Answer", "text": "No. OMTake uses OMT (Open Media Transport), an open-source protocol built into vMix 29 and later. You add it from the same NDI / OMT / Desktop Capture menu, but nothing NDI-related needs to be installed." } },
+                    { "@type": "Question", "name": "Which vMix version do I need?", "acceptedAnswer": { "@type": "Answer", "text": "vMix 29 or later. OMT input support arrived in vMix 29; earlier versions only list NDI sources." } },
+                    { "@type": "Question", "name": "Why doesn't vMix see my iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases Local Network access was denied for OMTake. Enable it in iOS Settings > Privacy & Security > Local Network. Also check that both devices are on the same network (not a guest network with client isolation), that vMix is version 29 or later, and that Windows Firewall allows vMix on private networks." } },
+                    { "@type": "Question", "name": "Does it work over Wi-Fi?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, OMTake streams over Wi-Fi. For a stable feed use a 5 GHz (or 6 GHz) network, keep the iPhone close to the access point, and connect the vMix computer with a cable. OMT is a high-quality, low-latency format, so it needs more bandwidth than compressed streaming." } },
+                    { "@type": "Question", "name": "Is audio sent to vMix too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The iPhone microphone is sent with the video and appears on the input's channel in the vMix audio mixer. You can mute it from the app." } },
+                    { "@type": "Question", "name": "Does OMTake support tally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The image gets a green border when the input is in Preview and a red border when it is in Program. In Program the rear torch also lights up at low intensity." } },
+                    { "@type": "Question", "name": "Can I stream in 4K?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, OMTake can send UHD (3840×2160) at 25, 30, 50 or 60 fps, plus a 24 fps cinema mode. HD (1920×1080) is recommended over Wi-Fi and for long sessions because it uses less bandwidth and keeps the iPhone cooler." } },
+                    { "@type": "Question", "name": "Can I use several iPhones in vMix at the same time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Install OMTake on each iPhone and give each one a unique source name. Every iPhone appears as its own OMT source in vMix." } },
+                    { "@type": "Question", "name": "What is the difference between NDI and OMT?", "acceptedAnswer": { "@type": "Answer", "text": "Both are IP video protocols with automatic discovery on the local network. NDI is a proprietary SDK with a large ecosystem and a compressed HX mode for low bandwidth. OMT is open source under the MIT license, made by the vMix team, royalty-free and built into vMix 29 and later." } }
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "OMTake",
+                "operatingSystem": "iOS 16.6 or later",
+                "applicationCategory": "MultimediaApplication",
+                "url": "https://omtake.app/",
+                "downloadUrl": "https://apps.apple.com/app/omtake/id6767678547",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <nav class="topnav">
+        <a href="../" class="topnav-brand">
+            <img src="../icon.png" alt="" width="32" height="32">
+            OMTake
+        </a>
+        <a href="https://apps.apple.com/app/omtake/id6767678547" class="topnav-cta" target="blank">Download</a>
+    </nav>
+
+    <header class="guide-hero">
+        <div class="guide-kicker">Guide · vMix 29+</div>
+        <h1>How to use iPhone as a <span>camera in vMix</span></h1>
+        <p class="guide-answer">
+            Install <strong>OMTake</strong> on your iPhone, connect it to the same network as your vMix computer and tap the red button.
+            In vMix, go to <strong>Add Input &gt; NDI / OMT / Desktop Capture</strong>: your iPhone shows up automatically as an OMT source.
+            No cable, no driver, no NDI license, and it takes about two minutes.
+        </p>
+        <div class="cta-row guide-cta">
+            <a href="https://apps.apple.com/app/omtake/id6767678547" class="cta-appstore" target="blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download Free
+            </a>
+            <a href="#setup" class="cta-secondary">Jump to setup</a>
+        </div>
+        <ul class="guide-toc">
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#setup">Setup steps</a></li>
+            <li><a href="#ndi-vs-omt">NDI vs OMT</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </header>
+
+    <main class="guide">
+
+        <section id="requirements" class="guide-section">
+            <h2>What you <span>need</span></h2>
+            <ul class="req-grid">
+                <li><strong>An iPhone</strong><span>iOS 16.6 or later</span></li>
+                <li><strong>vMix 29 or later</strong><span>OMT input is built in</span></li>
+                <li><strong>One local network</strong><span>5 GHz Wi-Fi for the iPhone, Gigabit cable for the PC if possible</span></li>
+                <li><strong>OMTake</strong><span>Free on the App Store</span></li>
+            </ul>
+        </section>
+
+        <section id="setup" class="guide-section">
+            <h2>Setup in <span>7 steps</span></h2>
+            <ol class="steps">
+                <li>
+                    <h3>Connect both devices to the same network</h3>
+                    <p>The iPhone and the vMix computer must be on the same local network and subnet. Avoid guest networks: they usually isolate devices from each other. A 5 GHz network for the iPhone and a wired connection for the computer give the most stable feed.</p>
+                </li>
+                <li>
+                    <h3>Install OMTake and allow the permissions</h3>
+                    <p>Download <a href="https://apps.apple.com/app/omtake/id6767678547" target="blank">OMTake from the App Store</a> and open it. iOS asks for three permissions: <strong>Camera</strong>, <strong>Microphone</strong> and <strong>Local Network</strong>. Allow all three. Without Local Network access, vMix cannot discover the iPhone.</p>
+                </li>
+                <li>
+                    <h3>Name your camera</h3>
+                    <p>Tap the source name at the top left of the screen (<code>OMTake</code> by default) and give it a name you will recognise in vMix, like <code>Cam 2 Wide</code>. Use a different name on each iPhone.</p>
+                </li>
+                <li>
+                    <h3>Choose resolution, frame rate and quality</h3>
+                    <p>Tap the <code>HD · 30 · MQ</code> indicator at the top right:</p>
+                    <ul>
+                        <li><strong>Resolution:</strong> HD (1920×1080) or UHD (3840×2160). Start with HD over Wi-Fi.</li>
+                        <li><strong>Frame rate:</strong> match your vMix project: 25 or 50 fps in Europe (PAL), 30 or 60 fps in North America (NTSC).</li>
+                        <li><strong>Quality:</strong> OMT Low, Medium or High. Medium is a good default; you can change it while live without dropping the feed.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Start streaming</h3>
+                    <p>Tap the red button. The status bar switches to something like <code>Live 30fps 12ms 1 rx</code>: the frame rate sent, the latency and the number of receivers connected. <code>0 rx</code> means vMix is not connected yet.</p>
+                </li>
+                <li>
+                    <h3>Add the iPhone as an input in vMix</h3>
+                    <p>In vMix, click <strong>Add Input</strong>, then <strong>NDI / OMT / Desktop Capture</strong>. Your iPhone appears automatically in the list, grouped under the iPhone's name, with an <code>OMT</code> thumbnail. Use the <strong>OMT</strong> filter at the top right to hide other sources. Select it and click <strong>OK</strong>.</p>
+                    <figure class="shot">
+                        <img src="../images/vmix-add-input-omtake.jpg" width="1280" height="720" loading="lazy" alt="The vMix Input Select window on the NDI / OMT / Desktop Capture tab, with the iPhone listed as an OMT source named OMTake below the NDI sources.">
+                        <figcaption>vMix 29 Input Select: the iPhone is listed as an OMT source, next to the NDI sources.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <h3>Check tally and go live</h3>
+                    <p>When the input is in <strong>Preview</strong>, OMTake draws a <span class="tally-green">green border</span> around the image. Cut it to <strong>Program</strong> and the border turns <span class="tally-red">red</span>, while the rear torch glows softly so the person on camera knows they are on air. The iPhone microphone appears on the input's channel in the vMix audio mixer.</p>
+                    <figure class="shot">
+                        <img src="../images/vmix-iphone-input-live.jpg" width="1280" height="720" loading="lazy" alt="vMix with the OMT iPhone input in Program, showing the live iPhone camera feed and its audio channel in the mixer.">
+                        <figcaption>The iPhone input live in Program, with its audio channel in the vMix mixer.</figcaption>
+                    </figure>
+                </li>
+            </ol>
+        </section>
+
+        <section class="guide-section">
+            <h2>Watch the <span>setup</span></h2>
+            <div class="video-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/K84zS94XtDU"
+                    title="OMTake demo: iPhone as a camera in vMix"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="ndi-vs-omt" class="guide-section">
+            <h2>NDI vs <span>OMT</span></h2>
+            <p class="section-intro">vMix lists NDI and OMT sources in the same window, so both feel the same once added. The differences are in licensing, bandwidth and ecosystem.</p>
+            <div class="table-wrap">
+                <table class="compare">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">NDI</th>
+                            <th scope="col">OMT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Made by</th>
+                            <td>NDI (Vizrt)</td>
+                            <td>StudioCoast, the makers of vMix</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">License</th>
+                            <td>Proprietary SDK, free to use under NDI's terms</td>
+                            <td>Open source, MIT license, royalty-free</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Support in vMix</th>
+                            <td>For many years</td>
+                            <td>Built in since vMix 29</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Discovery</th>
+                            <td>Automatic (mDNS / DNS-SD) or Discovery Server</td>
+                            <td>Automatic (DNS-SD / Bonjour)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Video codec</th>
+                            <td>SpeedHQ (full bandwidth) or H.264 / HEVC (NDI HX)</td>
+                            <td>VMX, an intra-frame codec with Low / Medium / High quality</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Low-bandwidth mode</th>
+                            <td>Yes, NDI HX</td>
+                            <td>No, designed for local networks</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Latency</th>
+                            <td>Low (full bandwidth), higher with HX</td>
+                            <td>Low, intra-frame only</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ecosystem</th>
+                            <td>Very large: cameras, converters, most video software</td>
+                            <td>Growing: vMix, media servers and players</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">iPhone app</th>
+                            <td>Several NDI camera apps</td>
+                            <td>OMTake, free with watermark</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="section-note"><strong>Which one should you pick?</strong> If your production runs on vMix 29 or later on a local network, OMT gives you a high-quality, low-latency iPhone camera with nothing extra to install or license. If you need to send video over a weak or remote link, or into software that only speaks NDI, NDI HX is the better fit.</p>
+        </section>
+
+        <section id="troubleshooting" class="guide-section">
+            <h2>Trouble<span>shooting</span></h2>
+            <dl class="trouble">
+                <div>
+                    <dt>The iPhone does not appear in vMix</dt>
+                    <dd>Open iOS <strong>Settings &gt; Privacy &amp; Security &gt; Local Network</strong> and enable OMTake. Check that both devices are on the same network and not on a guest network, that vMix is version 29 or later, and that Windows Firewall allows vMix on private networks (OMT uses TCP ports 6400–6600).</dd>
+                </div>
+                <div>
+                    <dt>The status says <code>Live … 0 rx</code></dt>
+                    <dd>The iPhone is streaming but no receiver is connected. Add the input in vMix (step 6), or refresh the NDI / OMT / Desktop Capture list.</dd>
+                </div>
+                <div>
+                    <dt>The image stutters or freezes</dt>
+                    <dd>Switch the OMT quality to Medium or Low (no need to stop the stream), drop from UHD to HD, move closer to the Wi-Fi access point, or use a 5 GHz network. Connecting the vMix computer by cable helps a lot.</dd>
+                </div>
+                <div>
+                    <dt><code>Camera access denied</code></dt>
+                    <dd>Enable Camera (and Microphone) for OMTake in iOS <strong>Settings &gt; OMTake</strong>, then reopen the app.</dd>
+                </div>
+                <div>
+                    <dt><code>Stopped: overheating</code></dt>
+                    <dd>Under sustained heat, OMTake first lowers the settings automatically to HD / Medium / 30 fps (or 25 fps). If the iPhone reaches a critical temperature, it stops after 10 seconds to protect the device. Remove the case, keep the phone out of direct sun or lights, or use HD for long sessions.</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section id="faq" class="guide-section">
+            <h2>Frequently asked <span>questions</span></h2>
+            <div class="faq">
+                <details>
+                    <summary>Can I use my iPhone as a camera in vMix for free?</summary>
+                    <p>Yes. OMTake is free on the App Store with a small watermark, and OMT support is built into vMix 29 or later, so no extra driver or NDI tools are needed. A one-time €9.99 purchase removes the watermark.</p>
+                </details>
+                <details>
+                    <summary>Do I need NDI to use my iPhone in vMix?</summary>
+                    <p>No. OMTake uses OMT (Open Media Transport), an open-source protocol built into vMix 29 and later. You add it from the same NDI / OMT / Desktop Capture menu, but nothing NDI-related needs to be installed.</p>
+                </details>
+                <details>
+                    <summary>Which vMix version do I need?</summary>
+                    <p>vMix 29 or later. OMT input support arrived in vMix 29; earlier versions only list NDI sources.</p>
+                </details>
+                <details>
+                    <summary>Why doesn't vMix see my iPhone?</summary>
+                    <p>In most cases Local Network access was denied for OMTake. Enable it in iOS <strong>Settings &gt; Privacy &amp; Security &gt; Local Network</strong>. Also check that both devices are on the same network (not a guest network with client isolation), that vMix is version 29 or later, and that Windows Firewall allows vMix on private networks.</p>
+                </details>
+                <details>
+                    <summary>Does it work over Wi-Fi?</summary>
+                    <p>Yes, OMTake streams over Wi-Fi. For a stable feed use a 5 GHz (or 6 GHz) network, keep the iPhone close to the access point, and connect the vMix computer with a cable. OMT is a high-quality, low-latency format, so it needs more bandwidth than compressed streaming.</p>
+                </details>
+                <details>
+                    <summary>Is audio sent to vMix too?</summary>
+                    <p>Yes. The iPhone microphone is sent with the video and appears on the input's channel in the vMix audio mixer. You can mute it from the app.</p>
+                </details>
+                <details>
+                    <summary>Does OMTake support tally?</summary>
+                    <p>Yes. The image gets a green border when the input is in Preview and a red border when it is in Program. In Program the rear torch also lights up at low intensity.</p>
+                </details>
+                <details>
+                    <summary>Can I stream in 4K?</summary>
+                    <p>Yes, OMTake can send UHD (3840×2160) at 25, 30, 50 or 60 fps, plus a 24 fps cinema mode. HD (1920×1080) is recommended over Wi-Fi and for long sessions because it uses less bandwidth and keeps the iPhone cooler.</p>
+                </details>
+                <details>
+                    <summary>Can I use several iPhones in vMix at the same time?</summary>
+                    <p>Yes. Install OMTake on each iPhone and give each one a unique source name. Every iPhone appears as its own OMT source in vMix.</p>
+                </details>
+                <details>
+                    <summary>Can I film in portrait?</summary>
+                    <p>Yes. OMTake works in portrait and landscape and tells vMix the orientation. In portrait, the image is sent in a 16:9 frame with black bars on the sides.</p>
+                </details>
+                <details>
+                    <summary>What is the difference between NDI and OMT?</summary>
+                    <p>Both are IP video protocols with automatic discovery on the local network. NDI is a proprietary SDK with a large ecosystem and a compressed HX mode for low bandwidth. OMT is open source under the MIT license, made by the vMix team, royalty-free and built into vMix 29 and later. See the <a href="#ndi-vs-omt">full comparison</a>.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="footer-cta">
+        <h2>Your iPhone, live in vMix</h2>
+        <p>Free on the App Store. No account, no subscription.</p>
+        <a href="https://apps.apple.com/app/omtake/id6767678547" class="cta-appstore" target="blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download Free
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../">Home</a>
+            <a href="../privacy.html">Privacy Policy</a>
+            <a href="https://github.com/xcarpentier/omtake">GitHub</a>
+        </div>
+        <p>2026 &copy; Xavier Carpentier | OMT protocol by StudioCoast</p>
+    </footer>
+
+</body>
+</html>
