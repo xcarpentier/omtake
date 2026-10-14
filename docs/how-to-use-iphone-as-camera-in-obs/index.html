@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use iPhone as a Camera in OBS Studio (OMT plugin) — OMTake</title>
+    <meta name="description" content="Use your iPhone as a wireless camera in OBS Studio 31+ with OMTake and the free, open-source OMT plugin. Plugin install on Windows, macOS and Linux, then add an OMT Source.">
+    <link rel="canonical" href="https://omtake.app/how-to-use-iphone-as-camera-in-obs/">
+    <link id="favicon" rel="icon" href="../icon_dark.png" type="image/png">
+
+    <!-- Open Graph — LinkedIn, Facebook, WhatsApp, Slack. These crawlers do not
+         execute JavaScript, so the tags must stay in the served HTML. -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="OMTake">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://omtake.app/how-to-use-iphone-as-camera-in-obs/">
+    <meta property="og:title" content="Using OMTake with OBS Studio">
+    <meta property="og:description" content="Use your iPhone as a wireless camera in OBS Studio with OMTake and the free OMT plugin. Install the plugin, add an OMT Source, pick your iPhone.">
+    <meta property="og:image" content="https://omtake.app/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:image:alt" content="The OMTake logo beside the tagline “Your iPhone is a pro camera”.">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Using OMTake with OBS Studio">
+    <meta name="twitter:description" content="Use your iPhone as a wireless camera in OBS Studio with OMTake and the free OMT plugin. Install the plugin, add an OMT Source, pick your iPhone.">
+    <meta name="twitter:image" content="https://omtake.app/og-image.png">
+    <meta name="twitter:image:alt" content="The OMTake logo beside the tagline “Your iPhone is a pro camera”.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "HowTo",
+                "name": "How to use iPhone as a camera in OBS Studio",
+                "description": "Receive an iPhone running OMTake in OBS Studio 31 or later through the free, open-source OMT (Open Media Transport) plugin.",
+                "supply": [
+                    { "@type": "HowToSupply", "name": "iPhone running iOS 16.6 or later" },
+                    { "@type": "HowToSupply", "name": "Computer running OBS Studio 31 or later" },
+                    { "@type": "HowToSupply", "name": "A local network shared by both devices" }
+                ],
+                "tool": [
+                    { "@type": "HowToTool", "name": "OMTake (free on the App Store)" },
+                    { "@type": "HowToTool", "name": "OMT plugin for OBS (free, open source)" }
+                ],
+                "step": [
+                    { "@type": "HowToStep", "position": 1, "name": "Install the OMT plugin for OBS", "text": "Download the plugin from the omtplugin releases on GitHub. On Windows, copy omtplugin.dll and libvmx.dll into C:\\ProgramData\\obs-studio\\plugins\\omtplugin\\bin\\64bit, creating the folder if needed. On macOS, install the pkg. On Linux, build it by following the plugin README." },
+                    { "@type": "HowToStep", "position": 2, "name": "Start streaming from OMTake", "text": "Put the iPhone on the same local network as the OBS computer, open OMTake, allow Camera, Microphone and Local Network access, and tap the red button." },
+                    { "@type": "HowToStep", "position": 3, "name": "Add an OMT Source in OBS", "text": "In OBS, add a new OMT Source and select the iPhone running OMTake." }
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "OMTake",
+                "operatingSystem": "iOS 16.6 or later",
+                "applicationCategory": "MultimediaApplication",
+                "url": "https://omtake.app/",
+                "downloadUrl": "https://apps.apple.com/app/omtake/id6767678547",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <nav class="topnav">
+        <a href="../" class="topnav-brand">
+            <img src="../icon.png" alt="" width="32" height="32">
+            OMTake
+        </a>
+        <a href="https://apps.apple.com/app/omtake/id6767678547" class="topnav-cta" target="blank">Download</a>
+    </nav>
+
+    <header class="guide-hero">
+        <div class="guide-kicker">Guide · OBS Studio 31+ · OMT plugin</div>
+        <h1>Using OMTake with <span>OBS Studio</span></h1>
+        <p class="guide-answer">
+            OMTake sends a standard <strong>OMT</strong> (Open Media Transport) stream, so any app that receives OMT can use it.
+            vMix supports OMT natively. OBS Studio receives it through the free <strong>OMT plugin</strong>, which adds an <strong>OMT Source</strong> that picks up OMT streams on your local network.
+        </p>
+        <div class="cta-row guide-cta">
+            <a href="https://apps.apple.com/app/omtake/id6767678547" class="cta-appstore" target="blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download Free
+            </a>
+            <a href="https://github.com/openmediatransport/omtplugin/releases" class="cta-secondary" target="blank">Get the OMT plugin</a>
+        </div>
+    </header>
+
+    <main class="guide">
+
+        <section id="requirements" class="guide-section">
+            <h2>What you <span>need</span></h2>
+            <ul class="req-grid">
+                <li><strong>An iPhone</strong><span>iOS 16.6 or later, with OMTake</span></li>
+                <li><strong>OBS Studio 31 or later</strong><span>Windows, macOS or Linux</span></li>
+                <li><strong>The OMT plugin</strong><span>Free, open source, MIT license</span></li>
+                <li><strong>One local network</strong><span>Shared by the iPhone and the OBS computer</span></li>
+            </ul>
+            <p class="section-note">The OMT plugin is a third-party plugin from the <a href="https://github.com/openmediatransport" target="blank">Open Media Transport</a> project. OMTake is an independent app and is not affiliated with or endorsed by the OBS Project.</p>
+        </section>
+
+        <section id="setup" class="guide-section">
+            <h2>Setup in <span>3 steps</span></h2>
+            <ol class="steps">
+                <li>
+                    <h3>Install the OMT plugin for OBS</h3>
+                    <p>Download it from the <a href="https://github.com/openmediatransport/omtplugin/releases" target="blank">plugin releases on GitHub</a>, then:</p>
+                    <ul>
+                        <li><strong>Windows:</strong> download the Windows binaries and copy <code>omtplugin.dll</code> and <code>libvmx.dll</code> into <code class="path">C:\ProgramData\obs-studio\plugins\omtplugin\bin\64bit</code>. Create the folder if it does not exist.</li>
+                        <li><strong>macOS:</strong> download the macOS <code>.pkg</code> and install it.</li>
+                        <li><strong>Linux:</strong> the plugin has to be built from source. Follow the <a href="https://github.com/openmediatransport/omtplugin#linux" target="blank">Linux instructions in the README</a>.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Start streaming from OMTake</h3>
+                    <p>Put the iPhone on the same local network as the OBS computer. Open OMTake, allow <strong>Camera</strong>, <strong>Microphone</strong> and <strong>Local Network</strong> access, and tap the red button.</p>
+                </li>
+                <li>
+                    <h3>Add an OMT Source in OBS</h3>
+                    <p>In OBS, add a new <strong>OMT Source</strong> and select the iPhone running OMTake.</p>
+                </li>
+            </ol>
+            <p class="section-note">For anything else about the plugin (other drives, Linux builds, updates), see the <a href="https://github.com/openmediatransport/omtplugin#readme" target="blank">official OMT plugin README</a>.</p>
+        </section>
+
+        <section id="vmix-only" class="guide-section">
+            <h2>vMix-only <span>features</span></h2>
+            <p class="section-intro">The video and audio stream is plain OMT, so it is the same in OBS and in vMix. <strong>Tally</strong> (the green / red border and the rear torch) is available in vMix only.</p>
+            <p class="section-note">Using vMix? Follow the <a href="../how-to-use-iphone-as-camera-in-vmix/">iPhone camera in vMix guide</a>.</p>
+        </section>
+
+    </main>
+
+    <section class="footer-cta">
+        <h2>Your iPhone, live over OMT</h2>
+        <p>Free on the App Store. No account, no subscription.</p>
+        <a href="https://apps.apple.com/app/omtake/id6767678547" class="cta-appstore" target="blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download Free
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../">Home</a>
+            <a href="../how-to-use-iphone-as-camera-in-vmix/">iPhone camera in vMix guide</a>
+            <a href="../privacy.html">Privacy Policy</a>
+            <a href="https://github.com/xcarpentier/omtake">GitHub</a>
+        </div>
+        <p>2026 &copy; Xavier Carpentier | OMT protocol by StudioCoast</p>
+    </footer>
+
+</body>
+</html>
