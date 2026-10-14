@@ -69,9 +69,10 @@
                     { "@type": "Question", "name": "Why doesn't vMix see my iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases Local Network access was denied for OMTake. Enable it in iOS Settings > Privacy & Security > Local Network. Also check that both devices are on the same network (not a guest network with client isolation), that vMix is version 29 or later, and that Windows Firewall allows vMix on private networks." } },
                     { "@type": "Question", "name": "Does it work over Wi-Fi?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, OMTake streams over Wi-Fi. For a stable feed use a 5 GHz (or 6 GHz) network, keep the iPhone close to the access point, and connect the vMix computer with a cable. OMT is a high-quality, low-latency format, so it needs more bandwidth than compressed streaming." } },
                     { "@type": "Question", "name": "Is audio sent to vMix too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The iPhone microphone is sent with the video and appears on the input's channel in the vMix audio mixer. You can mute it from the app." } },
-                    { "@type": "Question", "name": "Does OMTake support tally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The image gets a green border when the input is in Preview and a red border when it is in Program. In Program the rear torch also lights up at low intensity." } },
+                    { "@type": "Question", "name": "Does OMTake support tally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in vMix. The image gets a green border when the input is in Preview and a red border when it is in Program. In Program the rear torch also lights up at low intensity. Tally is a vMix-only feature." } },
                     { "@type": "Question", "name": "Can I stream in 4K?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, OMTake can send UHD (3840×2160) at 25, 30, 50 or 60 fps, plus a 24 fps cinema mode. HD (1920×1080) is recommended over Wi-Fi and for long sessions because it uses less bandwidth and keeps the iPhone cooler." } },
                     { "@type": "Question", "name": "Can I use several iPhones in vMix at the same time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Install OMTake on each iPhone and give each one a unique source name. Every iPhone appears as its own OMT source in vMix." } },
+                    { "@type": "Question", "name": "Does OMTake work with OBS Studio?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, through the free, open-source OMT plugin for OBS Studio 31 or later. OMTake sends a standard OMT stream, and the plugin adds an OMT Source that receives it. Tally is vMix only." } },
                     { "@type": "Question", "name": "What is the difference between NDI and OMT?", "acceptedAnswer": { "@type": "Answer", "text": "Both are IP video protocols with automatic discovery on the local network. NDI is a proprietary SDK with a large ecosystem and a compressed HX mode for low bandwidth. OMT is open source under the MIT license, made by the vMix team, royalty-free and built into vMix 29 and later." } }
                 ]
             },
@@ -244,7 +245,7 @@
                         <tr>
                             <th scope="row">Ecosystem</th>
                             <td>Very large: cameras, converters, most video software</td>
-                            <td>Growing: vMix, media servers and players</td>
+                            <td>Growing: vMix, OBS Studio (via the OMT plugin), media servers and players</td>
                         </tr>
                         <tr>
                             <th scope="row">iPhone app</th>
@@ -312,7 +313,7 @@
                 </details>
                 <details>
                     <summary>Does OMTake support tally?</summary>
-                    <p>Yes. The image gets a green border when the input is in Preview and a red border when it is in Program. In Program the rear torch also lights up at low intensity.</p>
+                    <p>Yes, in vMix. The image gets a green border when the input is in Preview and a red border when it is in Program. In Program the rear torch also lights up at low intensity. Tally is a vMix-only feature.</p>
                 </details>
                 <details>
                     <summary>Can I stream in 4K?</summary>
@@ -325,6 +326,10 @@
                 <details>
                     <summary>Can I film in portrait?</summary>
                     <p>Yes. OMTake works in portrait and landscape and tells vMix the orientation. In portrait, the image is sent in a 16:9 frame with black bars on the sides.</p>
+                </details>
+                <details>
+                    <summary>Does OMTake work with OBS Studio?</summary>
+                    <p>Yes, through the free, open-source <a href="https://github.com/openmediatransport/omtplugin" target="blank">OMT plugin</a> for OBS Studio 31 or later. OMTake sends a standard OMT stream, and the plugin adds an <strong>OMT Source</strong> that receives it. Tally is vMix only. See <a href="../how-to-use-iphone-as-camera-in-obs/">Using OMTake with OBS Studio</a>.</p>
                 </details>
                 <details>
                     <summary>What is the difference between NDI and OMT?</summary>
@@ -347,6 +352,7 @@
     <footer>
         <div class="footer-links">
             <a href="../">Home</a>
+            <a href="../how-to-use-iphone-as-camera-in-obs/">Using OMTake with OBS</a>
             <a href="../privacy.html">Privacy Policy</a>
             <a href="https://github.com/xcarpentier/omtake">GitHub</a>
         </div>

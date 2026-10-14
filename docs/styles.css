@@ -1199,3 +1199,28 @@ body::after {
 .footer-links {
     flex-wrap: wrap;
 }
+
+/* Third-party receiver compatibility (OBS via the OMT plugin) */
+.hero-compat {
+    margin-top: 8px;
+    animation-delay: 1.1s;
+}
+
+.hero-compat a,
+.protocol p a {
+    color: var(--accent);
+}
+
+.tally-card p.tally-note {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-dim);
+}
+
+.guide code.path {
+    white-space: normal;
+    word-break: break-all;
+}
